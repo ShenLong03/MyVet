@@ -40,5 +40,9 @@
         public string FullName => $"{FirstName} {LastName}";
 
         public string FullNameWithDocument => $"{FirstName} {LastName} - {Document}";
+
+        public ICollection<Pet> Pets { get; set; }
+
+        public ICollection<Agenda> Agendas { get; set; }
     }
 }

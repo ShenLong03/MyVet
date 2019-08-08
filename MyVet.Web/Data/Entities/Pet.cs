@@ -21,10 +21,6 @@
         [MaxLength(50, ErrorMessage = "The {0} field can not have more than {1} characters.")]
         public string Race { get; set; }
 
-        public Owner Owner { get; set; }
-
-        public PetType PetType { get; set; }
-
         [Display(Name = "Born")]
         [Required(ErrorMessage = "The field {0} is mandatory.")]
         [DataType(DataType.DateTime)]
@@ -39,11 +35,19 @@
 
         public string Remarks { get; set; }
 
-        public ICollection<History> Histories { get; set; }
 
         //TODO: replace the correct URL for the image
         public string ImageFullPath => string.IsNullOrEmpty(ImageUrl)
             ? null
             : $"https://TDB.azurewebsites.net{ImageUrl.Substring(1)}";
+
+
+        public Owner Owner { get; set; }
+
+        public PetType PetType { get; set; }
+
+        public ICollection<History> Histories { get; set; }
+
+        public ICollection<Agenda> Agendas { get; set; }
     }
 }

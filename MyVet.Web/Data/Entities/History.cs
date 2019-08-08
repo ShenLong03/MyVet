@@ -10,7 +10,7 @@
     {
         public int Id { get; set; }
 
-        public ServiceType ServiceType { get; set; }
+    
 
         [Display(Name = "Description")]
         [MaxLength(100, ErrorMessage = "The {0} field can not have more than {1} characters.")]
@@ -26,9 +26,13 @@
         [Display(Name = "Date")]
         [Required(ErrorMessage = "The field {0} is mandatory.")]
         [DataType(DataType.DateTime)]
-        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}"]
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}")]
         public DateTime DateLocal => Date.ToLocalTime();
 
         public string Remarks { get; set; }
+
+        public ServiceType ServiceType { get; set; }
+
+        public Pet Pet { get; set; }
     }
 }

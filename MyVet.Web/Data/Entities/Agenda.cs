@@ -22,13 +22,13 @@
         [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd H:mm tt}", ApplyFormatInEditMode = true)]
         public DateTime DateLocal => Date.ToLocalTime();
 
-        public Owner Owner { get; set; }
-
-        public Pet Pet { get; set; }
-
         public string Remarks { get; set; }
 
         [Display(Name = "Is Available?")]
         public bool IsAvailable { get; set; }
+
+        public Owner Owner { get; set; }
+
+        public Pet Pet { get; set; }
     }
 }
